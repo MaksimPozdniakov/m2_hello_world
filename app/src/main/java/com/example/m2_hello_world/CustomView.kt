@@ -18,7 +18,7 @@ class CustomView @JvmOverloads constructor(
     private var bottomTextView: TextView? = null
 
     init {
-        val padding = dpToPx(15)
+        val padding = dpToPx(16)
 
         // Создаем первый контейнер
         val firstContainer = LinearLayout(context).apply {
@@ -75,7 +75,8 @@ class CustomView @JvmOverloads constructor(
         }
         bottomContainer.addView(greyBack)
 
-        val bottomContainerParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
+        val bottomContainerParams = LayoutParams(LayoutParams.MATCH_PARENT,
+            LayoutParams.MATCH_PARENT)
         bottomContainerParams.addRule(BELOW, firstContainer.id)
         bottomContainer.layoutParams = bottomContainerParams
 
