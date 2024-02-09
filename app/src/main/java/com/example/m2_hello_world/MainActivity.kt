@@ -2,15 +2,19 @@ package com.example.m2_hello_world
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.m2_hello_world.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        val customView = findViewById<CustomView>(R.id.customView)
-
-        customView.setTopText("Верхняя строка")
-        customView.setBottomText("Нижняя строка")
+        binding.customView.setTopText("Верхняя строка")
+        binding.customView.setBottomText("Нижняя строка")
     }
 }
